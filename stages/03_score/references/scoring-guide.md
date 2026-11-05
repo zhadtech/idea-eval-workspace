@@ -11,6 +11,7 @@
 - Excitement is not evidence. Is the score backed by a finding?
 - A big market does not mean you can reach it. Score what the user can reach.
 - Already done by others? That is normal. Ask: is there a gap, a new audience, or a better workflow?
+- Old data is not today's market. Read the `## Freshness` section of `research.md` first. A finding that rests on stale or unread sources cannot give `high` confidence.
 
 ## Red team
 Write the 3 strongest reasons this idea fails, as a smart competitor or investor would say them.

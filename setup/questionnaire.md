@@ -21,5 +21,16 @@
 12. Which idea types will you judge most? Any types to add? (Example: "Add T8 Data product: sell datasets and charts to media.")
 13. Which paid tools or accounts can research use? (Example: "vidIQ free, a Google account for Trends, nothing else.")
 
+## Group D → `_config/sources.md`, `_config/scout-feeds.md`, and `_config/domains.md`
+14. **Markets:** The source library has a Global section and an example market, Vietnam. Which markets do you sell to? Claude drafts a section for each new one, and marks each source `not yet` until it is checked. Remove the Vietnam section if you do not need it. (Example: "Add the US.")
+15. **Scout lens:** Which markets and feed categories should the scout watch by default? How should it pick domains: `auto` (2 hot + 1 wild), `hot`, `random`, or fixed names? (Example: "VN and Global. All categories. Auto.")
+16. **Scout feeds:** Which feeds should be on or off? (Example: "Turn on Amazon Movers & Shakers. Turn off the Vietnamese forums.")
+17. **Domains:** Which domains do you already follow closely? They get `Familiar: yes`, so the wild pick skips them. Which domains do you never want? They get `On: no`. (Example: "I know software, AI, and education. Never mining.")
+18. **Schedule:** Run the scout by hand, weekly, or monthly? (Example: "Every Monday at 7:00.")
+
 ## After setup
-Put the first ideas in `stages/00_screen/input/ideas-batch.md`, for example copied from `../Ideas.md`. Then say "Screen these ideas".
+There are two ways to start:
+- You have ideas: put them in `stages/00_screen/input/ideas-batch.md`, for example copied from `../Ideas.md`. Then say "Screen these ideas".
+- You want ideas: say "Scout the market".
+
+If the user chose a schedule in question 18, offer to set it up now. A schedule is a standing task, so ask before you create it.

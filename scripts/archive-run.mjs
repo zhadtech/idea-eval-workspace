@@ -2,7 +2,7 @@
 // archive-run.mjs: move a finished idea run to archive/<run-id>/.
 // It moves every file in stages/*/input/ and stages/*/output/ (but not .gitkeep)
 // and PROGRESS.md. Then it makes a fresh PROGRESS.md from setup/progress-template.md.
-// It skips stages/00_screen/: shortlists stay for later runs.
+// It skips stages/00_scout/ and stages/00_screen/: scans, the feed log, and shortlists stay for later runs.
 // It does not touch _config/, references/, EDIT-LOG.md, or ideas-register.md.
 // With no run ID, it reads "Run ID:" from PROGRESS.md.
 // No dependencies. Needs Node.js 18 or newer.
@@ -44,9 +44,10 @@ if (!existsSync(stagesDir)) fail("no stages/ folder found next to scripts/.");
 const dest = join(root, "archive", slug);
 if (existsSync(dest)) fail(`archive/${slug} already exists. Nothing was moved.`);
 
+const KEEP = new Set(["00_scout", "00_screen"]); // these stages are not part of one idea run
 const moves = [];
 for (const stage of readdirSync(stagesDir, { withFileTypes: true })) {
-  if (!stage.isDirectory() || stage.name === "00_screen") continue;
+  if (!stage.isDirectory() || KEEP.has(stage.name)) continue;
   for (const sub of ["input", "output"]) {
     const dir = join(stagesDir, stage.name, sub);
     if (!existsSync(dir)) continue;

@@ -2,7 +2,7 @@
 // new-run.mjs: start a new idea run.
 // It finds the next free idea ID (IDEA-NNN) from ideas-register.md, archive/, and PROGRESS.md.
 // It makes PROGRESS.md from setup/progress-template.md and an input file for stage 01.
-// It stops if stages 01-04 still hold files from another run.
+// It stops if stages 01-05 still hold files from another run.
 // No dependencies. Needs Node.js 18 or newer.
 //
 // Usage (from the workspace root):
@@ -16,7 +16,7 @@ import { fileURLToPath } from "node:url";
 const USAGE = "Usage: node scripts/new-run.mjs <slug> [--dry-run]";
 const root = resolve(dirname(fileURLToPath(import.meta.url)), "..");
 const args = process.argv.slice(2);
-const RUN_STAGES = ["01_frame", "02_research", "03_score", "04_decide"];
+const RUN_STAGES = ["01_frame", "02_research", "03_score", "04_decide", "05_learn"];
 
 function fail(msg) {
   console.error(`new-run.mjs: ${msg}`);
@@ -36,7 +36,7 @@ if (!/^[a-z0-9][a-z0-9-]*$/.test(slug)) {
   fail(`"${slug}" is not a valid slug. Use lowercase letters, digits, and "-".`);
 }
 
-// Stages 01-04 must be empty. Stage 00 keeps its shortlists across runs.
+// Stages 01-05 must be empty. Stages 00_scout and 00_screen keep their files across runs.
 const leftovers = [];
 for (const stage of RUN_STAGES) {
   for (const sub of ["input", "output"]) {
