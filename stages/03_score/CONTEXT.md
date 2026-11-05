@@ -9,6 +9,7 @@
 | 4 | `../02_research/output/research.md` | All |
 | 3 | `../../_config/criteria.md` | All |
 | 3 | `../../_config/owner-profile.md` | Limits, Hard noes |
+| 3 | `../../_config/lessons.md` | "03_score" section only |
 | 3 | `references/scoring-guide.md` | Method, file formats |
 
 ## Process
@@ -30,7 +31,10 @@
 - [ ] Each criterion and deal-breaker in `criteria.md` is in `scores.json`.
 - [ ] Each score of 4–5 or 1–2 cites at least one finding.
 - [ ] The script ran with no errors. The scorecard shows its result as it is.
+- [ ] Lessons applied: list the IDs, or "none".
 Write the results under `## Verify` at the end of `scorecard.md`.
 
 ## Review gate
 Show the total, the band, and any caps. Ask the user which scores they disagree with. If they change a score, edit `scores.json` and run the script again. Wait for "go".
+
+On autopilot (rule 3 in `CLAUDE.md`), do not stop. Write these questions under `## Open questions` at the end of `scorecard.md`, and go on to stage 04.

@@ -6,10 +6,11 @@
 | Layer | Path | Use |
 |---|---|---|
 | 4 | `../03_score/output/score-result.md` | Total, band, caps, final verdict |
-| 4 | `../03_score/output/scorecard.md` | Red team, Pre-mortem, Upside |
+| 4 | `../03_score/output/scorecard.md` | Red team, Pre-mortem, Upside, Open questions |
 | 4 | `../01_frame/output/frame.md` | Pitch, Variants |
-| 4 | `../02_research/output/research.md` | Pursue only: market appraisal |
+| 4 | `../02_research/output/research.md` | Open questions; for Pursue, also the market appraisal |
 | 4 | `../../ideas-register.md` | Related ideas |
+| 3 | `../../_config/lessons.md` | "04_decide" section only |
 | 3 | `references/verdict-format.md` | Verdict template |
 | 3 | `references/icm-brief-format.md` | Pursue only: brief template |
 
@@ -28,10 +29,12 @@
 ## Verify
 - [ ] The front matter `verdict` and `score` match `score-result.md`, or the override has a reason.
 - [ ] Pursue has kill criteria. Park has a revisit trigger. Drop has a salvage line.
+- [ ] Lessons applied: list the IDs, or "none".
 Write the results under `## Verify` at the end of `verdict.md`.
 
 ## Review gate
+On autopilot, first show the open questions from stages 02 and 03. If an answer changes a finding or a score, go back to stage 03 and run the script again.
+
 Show the verdict in one line. Ask: "Pursue, Park, or Drop?" The decision is the user's. After "go":
 1. `node scripts/register.mjs`
-2. `node scripts/archive-run.mjs`
-3. Suggest a commit message. For Pursue, say: "Run `/icm-builder` and give it `archive/<run-id>/04_decide/output/icm-brief.md`."
+2. Go to stage 05: `stages/05_learn/CONTEXT.md`. Its gate archives the run.
